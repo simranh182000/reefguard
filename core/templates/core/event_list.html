@@ -1,0 +1,104 @@
+{% extends 'core/base.html' %}
+
+{% block title %}Events - ReefGuard{% endblock %}
+
+{% block content %}
+<div class="container my-5">
+    <h1 class="mb-4"><i class="bi bi-calendar-event"></i> Monitoring Events</h1>
+
+    <!-- Filter Form -->
+    <div class="card mb-4">
+        <div class="card-body">
+            <form method="get" class="row g-3">
+                <div class="col-md-4">
+                    <select name="event_type" class="form-select">
+                        <option value="">All Event Types</option>
+                        {% for value, label in event_types %}
+                            <option value="{{ value }}" {% if current_filters.event_type == value %}selected{% endif %}>
+                                {{ label }}
+                            </option>
+                        {% endfor %}
+                    </select>
+                </div>
+                <div class="col-md-3">
+                    <select name="severity" class="form-select">
+                        <option value="">All Severities</option>
+                        {% for value, label in severities %}
+                            <option value="{{ value }}" {% if current_filters.severity == value %}selected{% endif %}>
+                                {{ label }}
+                            </option>
+                        {% endfor %}
+                    </select>
+                </div>
+                <div class="col-md-3">
+                    <input type="number" name="year" class="form-control" placeholder="Year"
+                           value="{{ current_filters.year }}" min="2000" max="2100">
+                </div>
+                <div class="col-md-2">
+                    <button type="submit" class="btn btn-reef w-100">
+                        <i class="bi bi-filter"></i> Filter
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Events List -->
+    <div class="row">
+        {% for event in events %}
+        <div class="col-md-6 mb-3">
+            <div class="card shadow-sm">
+                <div class="card-body">
+                    <div class="d-flex justify-content-between align-items-start mb-2">
+                        <h5 class="card-title mb-0">{{ event.title }}</h5>
+                        <span class="badge
+                            {% if event.severity == 'critical' %}bg-danger
+                            {% elif event.severity == 'high' %}bg-warning text-dark
+                            {% elif event.severity == 'medium' %}bg-info
+                            {% else %}bg-secondary{% endif %}">
+                            {{ event.get_severity_display }}
+                        </span>
+                    </div>
+                    <p class="text-muted mb-2">
+                        <i class="bi bi-pin-map"></i> <a href="{% url 'reef_detail' event.reef.pk %}">{{ event.reef.name }}</a>
+                    </p>
+                    <p class="card-text">{{ event.description|truncatewords:25 }}</p>
+                    <div class="d-flex justify-content-between align-items-center">
+                        <div class="small text-muted">
+                            <i class="bi bi-calendar"></i> {{ event.event_date }}
+                            <span class="ms-2 badge bg-secondary">{{ event.get_event_type_display }}</span>
+                        </div>
+                        <a href="{% url 'event_detail' event.pk %}" class="btn btn-sm btn-reef">Details</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% empty %}
+        <div class="col-12">
+            <div class="alert alert-info">
+                <i class="bi bi-info-circle"></i> No events found. Try adjusting your filters.
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+
+    <!-- Pagination -->
+    {% if is_paginated %}
+    <nav aria-label="Page navigation">
+        <ul class="pagination justify-content-center">
+            {% if page_obj.has_previous %}
+                <li class="page-item">
+                    <a class="page-link" href="?page={{ page_obj.previous_page_number }}">Previous</a>
+                </li>
+            {% endif %}
+            <li class="page-item active"><span class="page-link">{{ page_obj.number }}</span></li>
+            {% if page_obj.has_next %}
+                <li class="page-item">
+                    <a class="page-link" href="?page={{ page_obj.next_page_number }}">Next</a>
+                </li>
+            {% endif %}
+        </ul>
+    </nav>
+    {% endif %}
+</div>
+{% endblock %}
