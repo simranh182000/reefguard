@@ -1,0 +1,130 @@
+{% extends 'core/base.html' %}
+
+{% block title %}ReefGuard - Home{% endblock %}
+
+{% block content %}
+<!-- Hero Section -->
+<div class="bg-primary text-white py-5">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-6">
+                <h1 class="display-4 fw-bold">Protecting Our Coral Reefs</h1>
+                <p class="lead">Join ReefGuard in monitoring, protecting, and restoring coral reefs worldwide.</p>
+                <div class="mt-4">
+                    <a href="{% url 'reef_list' %}" class="btn btn-light btn-lg me-2">Explore Reefs</a>
+                    <a href="{% url 'register' %}" class="btn btn-outline-light btn-lg">Get Involved</a>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="text-center">
+                    <i class="bi bi-water" style="font-size: 10rem; opacity: 0.3;"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Stats Section -->
+<div class="container my-5">
+    <div class="row text-center">
+        <div class="col-md-4 mb-3">
+            <div class="card shadow-sm">
+                <div class="card-body">
+                    <i class="bi bi-pin-map-fill text-primary" style="font-size: 3rem;"></i>
+                    <h3 class="mt-3">{{ reef_count }}</h3>
+                    <p class="text-muted">Monitored Reefs</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 mb-3">
+            <div class="card shadow-sm">
+                <div class="card-body">
+                    <i class="bi bi-calendar-event text-success" style="font-size: 3rem;"></i>
+                    <h3 class="mt-3">{{ event_count }}</h3>
+                    <p class="text-muted">Documented Events</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 mb-3">
+            <div class="card shadow-sm">
+                <div class="card-body">
+                    <i class="bi bi-people-fill text-info" style="font-size: 3rem;"></i>
+                    <h3 class="mt-3">Community</h3>
+                    <p class="text-muted">Powered</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Featured Articles -->
+{% if featured_articles %}
+<div class="bg-light py-5">
+    <div class="container">
+        <h2 class="mb-4">Featured Articles</h2>
+        <div class="row">
+            {% for article in featured_articles %}
+            <div class="col-md-4 mb-3">
+                <div class="card h-100 shadow-sm">
+                    <div class="card-body">
+                        <span class="badge bg-primary mb-2">{{ article.get_category_display }}</span>
+                        <h5 class="card-title">{{ article.title }}</h5>
+                        <p class="card-text">{{ article.excerpt }}</p>
+                    </div>
+                    <div class="card-footer bg-white">
+                        <a href="{% url 'article_detail' article.slug %}" class="btn btn-sm btn-reef">
+                            Read More <i class="bi bi-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+{% endif %}
+
+<!-- Recent Events -->
+{% if recent_events %}
+<div class="container my-5">
+    <h2 class="mb-4">Recent Events</h2>
+    <div class="list-group">
+        {% for event in recent_events %}
+        <a href="{% url 'event_detail' event.pk %}" class="list-group-item list-group-item-action">
+            <div class="d-flex w-100 justify-content-between">
+                <h6 class="mb-1">{{ event.title }}</h6>
+                <small>{{ event.event_date }}</small>
+            </div>
+            <p class="mb-1">{{ event.reef.name }} - {{ event.get_event_type_display }}</p>
+            <small>
+                <span class="badge
+                    {% if event.severity == 'critical' %}bg-danger
+                    {% elif event.severity == 'high' %}bg-warning
+                    {% elif event.severity == 'medium' %}bg-info
+                    {% else %}bg-secondary{% endif %}">
+                    {{ event.get_severity_display }}
+                </span>
+            </small>
+        </a>
+        {% endfor %}
+    </div>
+    <div class="text-center mt-3">
+        <a href="{% url 'event_list' %}" class="btn btn-reef">View All Events</a>
+    </div>
+</div>
+{% endif %}
+
+<!-- Call to Action -->
+<div class="bg-primary text-white py-5">
+    <div class="container text-center">
+        <h2 class="mb-3">Make a Difference Today</h2>
+        <p class="lead mb-4">Report pollution, share coral sightings, or contribute to our research.</p>
+        <a href="{% url 'report_pollution' %}" class="btn btn-light btn-lg me-2">
+            <i class="bi bi-exclamation-triangle"></i> Report Pollution
+        </a>
+        <a href="{% url 'report_sighting' %}" class="btn btn-outline-light btn-lg">
+            <i class="bi bi-binoculars"></i> Report Sighting
+        </a>
+    </div>
+</div>
+{% endblock %}
