@@ -1,0 +1,190 @@
+[
+  {
+    "model": "core.reef",
+    "pk": 1,
+    "fields": {
+      "name": "Great Barrier Reef",
+      "region": "pacific",
+      "country": "Australia",
+      "latitude": -18.2871,
+      "longitude": 147.6992,
+      "description": "The Great Barrier Reef is the world's largest coral reef system, composed of over 2,900 individual reefs and 900 islands. It supports incredible biodiversity and is visible from outer space.",
+      "area_km2": 348000.0,
+      "depth_meters": 35.0,
+      "health_status": "fair",
+      "created_by": null,
+      "created_at": "2024-01-15T10:00:00Z",
+      "updated_at": "2024-01-15T10:00:00Z"
+    }
+  },
+  {
+    "model": "core.reef",
+    "pk": 2,
+    "fields": {
+      "name": "Belize Barrier Reef",
+      "region": "caribbean",
+      "country": "Belize",
+      "latitude": 17.3167,
+      "longitude": -87.5333,
+      "description": "The Belize Barrier Reef is a UNESCO World Heritage Site and the second largest coral reef system in the world. It is home to diverse marine life including sea turtles, rays, and over 500 species of fish.",
+      "area_km2": 963.0,
+      "depth_meters": 30.0,
+      "health_status": "good",
+      "created_by": null,
+      "created_at": "2024-01-16T10:00:00Z",
+      "updated_at": "2024-01-16T10:00:00Z"
+    }
+  },
+  {
+    "model": "core.reef",
+    "pk": 3,
+    "fields": {
+      "name": "Raja Ampat Reefs",
+      "region": "pacific",
+      "country": "Indonesia",
+      "latitude": -0.2317,
+      "longitude": 130.5253,
+      "description": "Raja Ampat is known as the epicenter of marine biodiversity, hosting over 1,500 species of fish and 75% of all known coral species. Its pristine reefs are among the healthiest in the world.",
+      "area_km2": 4000.0,
+      "depth_meters": 40.0,
+      "health_status": "excellent",
+      "created_by": null,
+      "created_at": "2024-01-17T10:00:00Z",
+      "updated_at": "2024-01-17T10:00:00Z"
+    }
+  },
+  {
+    "model": "core.reef",
+    "pk": 4,
+    "fields": {
+      "name": "Red Sea Coral Reefs",
+      "region": "red_sea",
+      "country": "Egypt",
+      "latitude": 27.2579,
+      "longitude": 33.8116,
+      "description": "The Red Sea reefs are renowned for their resilience to temperature changes and stunning coral formations. These reefs feature dramatic walls, caves, and an abundance of colorful fish species.",
+      "area_km2": 1240.0,
+      "depth_meters": 45.0,
+      "health_status": "good",
+      "created_by": null,
+      "created_at": "2024-01-18T10:00:00Z",
+      "updated_at": "2024-01-18T10:00:00Z"
+    }
+  },
+  {
+    "model": "core.reef",
+    "pk": 5,
+    "fields": {
+      "name": "Maldives Coral Reefs",
+      "region": "indian",
+      "country": "Maldives",
+      "latitude": 3.2028,
+      "longitude": 73.2207,
+      "description": "The Maldives features extensive coral reef systems surrounding its 1,200 islands. These atolls support rich marine ecosystems but face challenges from climate change and ocean acidification.",
+      "area_km2": 8900.0,
+      "depth_meters": 25.0,
+      "health_status": "fair",
+      "created_by": null,
+      "created_at": "2024-01-19T10:00:00Z",
+      "updated_at": "2024-01-19T10:00:00Z"
+    }
+  },
+  {
+    "model": "core.reef",
+    "pk": 6,
+    "fields": {
+      "name": "Andros Barrier Reef",
+      "region": "caribbean",
+      "country": "Bahamas",
+      "latitude": 24.7000,
+      "longitude": -77.9000,
+      "description": "The third-largest barrier reef in the world, Andros Barrier Reef extends over 140 miles along the eastern shore of Andros Island. It features blue holes and diverse marine habitats.",
+      "area_km2": 560.0,
+      "depth_meters": 28.0,
+      "health_status": "good",
+      "created_by": null,
+      "created_at": "2024-01-20T10:00:00Z",
+      "updated_at": "2024-01-20T10:00:00Z"
+    }
+  },
+  {
+    "model": "core.article",
+    "pk": 1,
+    "fields": {
+      "title": "Understanding Coral Bleaching",
+      "slug": "understanding-coral-bleaching",
+      "category": "education",
+      "content": "Coral bleaching occurs when corals expel the algae (zooxanthellae) living in their tissues, causing them to turn white. This happens when corals are stressed by changes in conditions such as temperature, light, or nutrients. When water is too warm, corals will expel the algae living in their tissues causing the coral to turn completely white. While bleached corals are not dead, they are under more stress and are subject to mortality. The main cause of coral bleaching is climate change, which leads to higher sea temperatures. El Niño events also contribute to mass bleaching events worldwide.",
+      "excerpt": "Learn about the causes and effects of coral bleaching, one of the biggest threats to coral reef ecosystems worldwide.",
+      "author": null,
+      "published": true,
+      "featured": true,
+      "created_at": "2024-01-10T10:00:00Z",
+      "updated_at": "2024-01-10T10:00:00Z"
+    }
+  },
+  {
+    "model": "core.article",
+    "pk": 2,
+    "fields": {
+      "title": "How You Can Help Save Coral Reefs",
+      "slug": "how-you-can-help-save-coral-reefs",
+      "category": "conservation",
+      "content": "Everyone can contribute to coral reef conservation. Simple actions make a difference: 1) Reduce your carbon footprint by conserving energy and using renewable sources. 2) Use reef-safe sunscreen when swimming near reefs. 3) Practice responsible tourism by not touching or stepping on coral. 4) Reduce plastic use to prevent ocean pollution. 5) Support organizations working on reef conservation. 6) Spread awareness about the importance of coral reefs. 7) Make sustainable seafood choices. Even small changes in daily habits can have a significant positive impact on these vital ecosystems.",
+      "excerpt": "Discover practical ways you can contribute to coral reef conservation in your daily life.",
+      "author": null,
+      "published": true,
+      "featured": true,
+      "created_at": "2024-01-11T10:00:00Z",
+      "updated_at": "2024-01-11T10:00:00Z"
+    }
+  },
+  {
+    "model": "core.article",
+    "pk": 3,
+    "fields": {
+      "title": "The Importance of Coral Reef Ecosystems",
+      "slug": "importance-of-coral-reef-ecosystems",
+      "category": "education",
+      "content": "Coral reefs are among the most diverse and valuable ecosystems on Earth. They support more species per unit area than any other marine environment, including about 4,000 species of fish, 800 species of hard corals, and hundreds of other species. Despite covering less than 0.1% of the ocean floor, reefs host more than 25% of all marine species. Beyond biodiversity, coral reefs provide crucial services: they protect coastlines from storms and erosion, provide food and livelihoods for millions of people, contribute to medical discoveries, and generate billions in tourism revenue. Protecting these ecosystems is essential for both marine life and human communities.",
+      "excerpt": "Explore why coral reefs are vital to ocean health, coastal protection, and human livelihoods.",
+      "author": null,
+      "published": true,
+      "featured": true,
+      "created_at": "2024-01-12T10:00:00Z",
+      "updated_at": "2024-01-12T10:00:00Z"
+    }
+  },
+  {
+    "model": "core.article",
+    "pk": 4,
+    "fields": {
+      "title": "Coral Restoration Techniques",
+      "slug": "coral-restoration-techniques",
+      "category": "restoration",
+      "content": "Coral restoration has become increasingly important as reefs face mounting pressures. Several techniques show promise: Coral gardening involves growing coral fragments in nurseries before transplanting them to degraded reefs. Microfragmentation speeds up coral growth by cutting corals into small pieces. Coral breeding programs help maintain genetic diversity. Artificial reef structures provide substrate for coral attachment. Scientists are also developing super corals - strains bred or engineered to be more resilient to warming waters. While restoration alone cannot solve all reef problems, it's a valuable tool when combined with reducing stressors like pollution and overfishing.",
+      "excerpt": "Learn about innovative techniques scientists use to restore and rehabilitate damaged coral reefs.",
+      "author": null,
+      "published": true,
+      "featured": false,
+      "created_at": "2024-01-13T10:00:00Z",
+      "updated_at": "2024-01-13T10:00:00Z"
+    }
+  },
+  {
+    "model": "core.article",
+    "pk": 5,
+    "fields": {
+      "title": "Latest Research on Ocean Acidification",
+      "slug": "latest-research-ocean-acidification",
+      "category": "research",
+      "content": "Ocean acidification, often called climate change's evil twin, poses a significant threat to coral reefs. As the ocean absorbs excess CO2 from the atmosphere, it becomes more acidic, making it harder for corals to build their calcium carbonate skeletons. Recent research shows that acidification affects coral growth rates, structural integrity, and their ability to recover from bleaching. Some corals show adaptive capacity, but the rate of change may outpace their ability to adapt. Studies also reveal complex interactions between temperature stress and acidification. Understanding these mechanisms is crucial for predicting reef futures and developing effective conservation strategies.",
+      "excerpt": "Discover the latest scientific findings on how ocean acidification threatens coral reef survival.",
+      "author": null,
+      "published": true,
+      "featured": false,
+      "created_at": "2024-01-14T10:00:00Z",
+      "updated_at": "2024-01-14T10:00:00Z"
+    }
+  }
+]
